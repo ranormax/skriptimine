@@ -1,0 +1,16 @@
+/bin/bash
+
+kella ja kuupäeva väljastamine
+
+defineerime kella muutuja
+
+kell ="10.44=
+
+defineerime kuupäeva muutuja
+
+kuupaev"13.03.2017"
+
+trükime sisu välja koos tekstiga
+
+echo "kell on $kell"
+echo "kuupaev on $kuupaev"
