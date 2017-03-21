@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+#kehamassiindeksi arvutamine
+#
+#
+echo -n "sisesta eesnimi ja perenimi"
+read eesnimi perenimi
+echo -n "sisesta kaal (kg)"
+read m
+echo -n "sisesta pikkus (m)"
+read h
+# arvutame kehamassi indeksi
+# i = m / h^2
+i=$(echo "scale=2;$m/$h^2" | bc)
+echo "tere $eesnimi $perenimi"
+echo "teie kehamassiindeks on $1"
+#erinevad väljundid
+alakaal_t=$(echo "$i < 19" | bc)
+normaal_t=$(echo "$i >= 19 && $i < 25" | bc)
+ulekaal_t=$(echo "$i >=25 && $i < 30" | bc)
+rasvumine_t=$(echo "$i >=30" | bc)
+#alakaal
+if [ $alakaal_t -eq 1 ]; then
+echo "ALAKAAL"
+echo "alakaal ei ole tervisele ohtlik"
+echo "kuid toitainete puudus võib põhjustada terviserikkeid"
+# normaalkaal
+elif [ $normaal_t -eq 1 ]; then
+echo "NORMAALKAAL"
+# ülekaal
+elif [ $ulekaal_t -eq 1 ]; then
+echo "ülekaal"
+# rasvumine
+elif [ $ravumine_t -eq 1 ]; then
+echo "rasvumine"
+echo "tuleb midagi ette võtta, elule ohtlik"
+ else
+echo "probleem skriptiga"
+fi
