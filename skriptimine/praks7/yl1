@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+#faili loomine
+#
+if [ $# -ne 1 ]
+then
+echo "kasutusjuhend: $0 failinimi"
+echo "näiteks $0 test.txt"
+exit 1
+else
+failinimi=$1
+# kontrollime antud nimega faili olemasolu
+if [ -f $failinimi ]; then
+echo "fail $failinimi on juba olemas"
+# kontrollime, kas see fail on sisuga või mitte
+if ! [ -s $failinimi ]; then
+echo "antud fail on tühi!"
+else
+echo "antud fail ei ole tühi"
+fi
+echo "kui ei soovi ümber kirjutada"
+read -p "sisesta failinimi" uusnimi
+fi
+# lisame uue faili nime kontrolli
+if [ -n "$uusnimi" ]; then
+failinimi=$uusnimi
+fi
+touch $failinimi
+# kui eelmine käsk -touch nimi on ok - $? on 0
+if [ $? -eq 0 ]; then
+echo "fail $failinimi on loodud"
+exit 0
+else
+echo "faili $failinimi loomisel on probleem"
+exit 1
+fi
+fi
+
