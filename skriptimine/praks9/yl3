@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#kasutaja sisendus ja sõnade lugemine
+#
+#määrame sõnade arvu
+kokku=0
+#loeme kasutaja sisestatud
+
+echo "sisesta lause: "
+read lause
+for sona in $lause
+do
+echo $sona
+kokku=$(($kokku + 1))
+done
+echo "lause koosneb $kokku sõnast"
