@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+#failist info lugemine
+#
+while read rida
+do
+rida=$(echo $rida | sed 's/:/ /g')
+echo $rida
+# tühikutega rida on lihtne sonadeks loigata for tsükliga
+for sona in $rida
+do
+echo $sona #trükime iga sona valja
+done 
+done < fail
