@@ -1,0 +1,13 @@
+#!/bin/bash
+# kommentaari osa, kus on kirjas skripti nimi ja skripti ülesanne ja kirjeldus
+echo "Ranor-Max Kivirahk, delete skript, otsi faili nime jargi ja kustuta see"
+file=$1
+if [[ -f $file ]]; then
+read -p "fail $file leitud. kas tahate selle kustutada? [y/n] " delete
+if [[ $delete == [yY] ]]; then #ainult kustuta fail kui vajutatakse y klahvile
+rm "$file" && echo "fail kustutatud." 
+fi
+else
+echo "faili $file ei eksisteeri"
+fi
+
