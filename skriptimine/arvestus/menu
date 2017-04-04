@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# menüü skript Ranor-Max Kivirähk
+read -p "menüü"
+cat -n menu1 menu2 menu3
+read -p "tehke oma valik" p
+if [ $p -eq 1 ]; then
+echo "steak and potatoes"
+echo "stick to your ribs"
+echo "watch your cholesterol"
+echo "enjoy your meal"
+elif [ $p -eq 2 ]; then
+echo "fish and chips"
+echo "british are coming"
+echo "enjoy your meal!"
+elif [ $p -eq 3 ]; then
+echo "soup and salad"
+echo "health foods"
+echo "dieting is so boring"
+echo "enjoy your meal"
+else
+echo "tehke oma valik uuesti"
+fi
