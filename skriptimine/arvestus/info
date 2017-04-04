@@ -1,0 +1,16 @@
+#!/bin/bash
+# welcome text
+echo "tere kasutaja!"
+# press enter to continue
+echo "jätkamiseks vajuta ENTER klahvi"
+read var
+if [ var = "enter" ]
+then
+echo "enter"
+else
+echo $var
+fi
+echo "täna on $(date)"
+echo "selle kuu kalender"
+cal
+pwd
